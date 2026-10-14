@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Untuk Tata 🤍</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(160deg,#fff1f6,#ffe1ec,#fff7fb);color:#5b3041;min-height:100vh;overflow-x:hidden}
+.wrap{max-width:520px;margin:auto;padding:22px 18px 45px;text-align:center}
+.card{background:rgba(255,255,255,.82);border:2px solid rgba(255,153,185,.25);border-radius:28px;padding:25px 20px;box-shadow:0 15px 45px rgba(183,77,116,.15);margin-top:15px}
+h1{font-size:31px;margin:5px 0 8px}.sub{font-size:15px;line-height:1.6;margin:0 0 18px}
+button{border:0;border-radius:999px;padding:13px 19px;font-weight:bold;font-size:15px;background:#ff78a5;color:white;box-shadow:0 7px 18px #ff78a555;cursor:pointer;margin:5px}
+button:active{transform:scale(.96)}
+.heart{font-size:62px;animation:pulse 1.4s infinite}
+@keyframes pulse{50%{transform:scale(1.12)}}
+.hidden{display:none}.msg{font-size:18px;line-height:1.65;margin:15px 0}
+.progress{height:9px;background:#f8d7e2;border-radius:20px;overflow:hidden;margin:17px 0}.bar{height:100%;width:0;background:#ff78a5;transition:.5s}
+.note{background:#fff4f8;border-radius:20px;padding:15px;text-align:left;margin:12px 0;font-size:15px;line-height:1.55}
+.mini{font-size:12px;opacity:.7}.float{position:fixed;pointer-events:none;font-size:24px;animation:fall 4s linear forwards}
+@keyframes fall{to{transform:translateY(105vh) rotate(360deg);opacity:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <div class="heart">🫶🏻</div>
+    <h1>Hai Tataaa 🤍</h1>
+    <p class="sub">Katanya lagi PMS yaa?<br>Jadi hari ini tugas Tata cuma satu:<br><b>istirahat, makan, dan dimanja secara virtual.</b> 😤</p>
+    <button onclick="start()">💌 Buka pesan dari aku</button>
+  </div>
+
+  <div id="main" class="card hidden">
+    <h2>🚨 PENGUMUMAN PENTING 🚨</h2>
+    <p class="msg">Tata sedang memasuki fase<br><b>“boleh bad mood, tapi tetap harus disayang”</b> 😂</p>
+    <div class="note">Aku tahu aku jauh dan sekarang aku belum bisa kirim apa-apa. Bukan karena nggak mau, ya. Kendala mbanking di sini bikin semuanya serba cash 😭💸</div>
+    <div class="note">Jadi untuk sementara aku kirim yang paling gampang dulu:<br><b>perhatian, doa, gangguan kecil, dan rasa sayang.</b> 🤏🏻🤍</div>
+    <button onclick="next()">👉🏻 Lanjut, jangan sok kuat</button>
+    <div class="progress"><div class="bar" id="bar"></div></div>
+  </div>
+
+  <div id="pages" class="card hidden">
+    <div id="emoji" style="font-size:48px">🥺</div>
+    <h2 id="title"></h2>
+    <p id="text" class="msg"></p>
+    <button onclick="next()">💗 Lanjut</button>
+    <button onclick="hug()">🫂 Peluk virtual</button>
+    <p class="mini" id="counter"></p>
+  </div>
+
+  <div id="end" class="card hidden">
+    <div style="font-size:55px">🐻‍❄️💗</div>
+    <h2>Pesan terakhir buat Tata</h2>
+    <p class="msg">Kalau hari ini rasanya capek, jangan dipaksa kuat terus.</p>
+    <p class="msg"><b>Kalau mau marah, marah aja.<br>Kalau mau manja, manja aja.<br>Kalau mau diem, aku temenin.</b></p>
+    <div class="note">Jarak kita memang bikin aku belum bisa muncul bawa cokelat, makanan, atau bunga ke depan pintu Tata. 😭<br><br>Tapi kalau rasa sayang bisa dikirim lewat Wi-Fi, kayaknya HP Tata sudah penuh dari tadi. 😂🤍</div>
+    <p class="msg">Semoga PMS-nya cepat lewat.<br>Semoga mood Tata balik lagi.<br>Dan semoga suatu hari nanti aku bisa bilang ini sambil langsung ngasih peluk, bukan lewat layar. 🥹</p>
+    <button onclick="rain()">🌸 Klik kalau mau dibanjiri sayang</button>
+    <p style="margin-top:22px;font-weight:bold">— dari aku, yang lagi jauh tapi tetap mikirin Tata 🤍</p>
+  </div>
+</div>
+
+<script>
+let i=0;
+const data=[
+["🥹","Tata, denger ya...","PMS boleh bikin badan nggak enak, mood naik turun, atau pengen marah tanpa alasan. Jadi jangan merasa bersalah kalau hari ini nggak seceria biasanya."],
+["🍫","Cokelat virtual dulu","Karena aku belum bisa ngirim cokelat beneran... ini aku kasih cokelat imajinasi. Jangan dimakan semua, sisain satu buat aku. 😭🍫"],
+["🧸","Mode manja: ON","Hari ini Tata resmi boleh jadi bayi. Selimut. Rebahan. Minum air. Makan yang enak. Dan kalau butuh aku, tinggal panggil. 😌"],
+["📱","LDR memang ngeselin","Aku pengen banget bisa tiba-tiba datang dan bilang, “sini gue peluk.” Tapi untuk sekarang, layar HP dulu yang jadi jembatan kita. 😭"],
+["🤍","Yang penting satu...","Jangan ngerasa sendirian. Aku memang nggak ada di samping Tata sekarang, tapi perhatian aku tetap nyangkut di sini."],
+["😤","Dan satu larangan!","DILARANG bilang “aku jelek hari ini”. Tata tetap lucu. Hormat dulu kepada keputusan aku. Terima kasih. 😂"]
+];
+function start(){
+ document.querySelector('.card').style.display='none';
+ document.getElementById('main').classList.remove('hidden');
+}
+function next(){
+ if(document.getElementById('main').classList.contains('hidden')===false && i===0){
+   document.getElementById('main').classList.add('hidden');
+   document.getElementById('pages').classList.remove('hidden');
+ }
+ if(i<data.length){
+   document.getElementById('emoji').textContent=data[i][0];
+   document.getElementById('title').textContent=data[i][1];
+   document.getElementById('text').textContent=data[i][2];
+   document.getElementById('counter').textContent=(i+1)+" / "+data.length;
+   document.getElementById('bar').style.width=((i+1)/data.length*100)+'%';
+   i++;
+ }else{
+   document.getElementById('pages').classList.add('hidden');
+   document.getElementById('end').classList.remove('hidden');
+ }
+}
+function hug(){
+ for(let j=0;j<10;j++) setTimeout(()=>spawn('🫂'),j*90);
+}
+function rain(){
+ for(let j=0;j<35;j++) setTimeout(()=>spawn(['🤍','💗','🌸','🫶🏻','✨'][Math.floor(Math.random()*5)]),j*70);
+}
+function spawn(x){
+ const e=document.createElement('div');e.className='float';e.textContent=x;
+ e.style.left=Math.random()*95+'vw';e.style.top='-30px';e.style.animationDuration=(3+Math.random()*2)+'s';
+ document.body.appendChild(e);setTimeout(()=>e.remove(),5000);
+}
+</script>
+</body>
+</html>
